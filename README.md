@@ -9,7 +9,7 @@
 * [Gabriel Cunha Schlegel]
 * [Heitor Alvernaz Leite]
 * [Iago Fereguetti Ribeiro]
-* 
+
 ## Professores responsáveis
 
 * [Nome completo do professor 1]

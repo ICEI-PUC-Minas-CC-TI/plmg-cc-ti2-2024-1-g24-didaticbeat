@@ -13,7 +13,7 @@
 ## Professores responsáveis
 
 * [Nome completo do professor 1]
-* [Nome completo do professor 2]
+* [Luciana Mara Freitas Diniz]
 
 ## Instruções de utilização
 

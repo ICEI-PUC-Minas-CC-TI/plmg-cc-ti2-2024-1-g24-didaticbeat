@@ -12,7 +12,7 @@
 
 ## Professores responsáveis
 
-* [Nome completo do professor 1]
+* [Ilo Amy Saldanha Rivero]
 * [Luciana Mara Freitas Diniz]
 
 ## Instruções de utilização

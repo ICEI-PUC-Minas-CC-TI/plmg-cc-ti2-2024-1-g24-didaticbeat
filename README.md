@@ -1,14 +1,15 @@
-# [Nome do projeto]
+# [Didatic Beat]
 
 [Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.]
 
 ## Alunos integrantes da equipe
 
-* [Nome completo do aluno 1]
-* [Nome completo do aluno 2]
-* [Nome completo do aluno 3]
-* [Nome completo do aluno 4]
-
+* [Arthur Alves Batista de Lima Ferreira]
+* [Felipe Vilhena Dias]
+* [Gabriel Cunha Schlegel]
+* [Heitor Alvernaz Leite]
+* [Iago Fereguetti Ribeiro]
+* 
 ## Professores responsáveis
 
 * [Nome completo do professor 1]

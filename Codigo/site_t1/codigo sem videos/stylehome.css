@@ -37,6 +37,7 @@
 body {
     overflow-x: hidden;
     background-color: white;
+    background: linear-gradient(white, #eaf1f1);
 }
 
 .textos-aulas strong {
@@ -194,8 +195,6 @@ h3 {
 }
 
 .textos-aulas {
-    background-color: rgba(0, 0, 0, 0.151);
-    backdrop-filter: blur(10px);
     /*padding-left: 50px;*/
     max-width: 40rem;
     max-height: 600px;
@@ -204,6 +203,7 @@ h3 {
 }
 
 .aulas {
+    margin: 100px;
     margin-top: 50px;
     margin-bottom: 80px;
     align-items: center;
@@ -212,12 +212,14 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: calc(100% - 200px);
     height: 1050px;
     padding-left: 100px;
     padding-right: 100px;
     display: flex;
     overflow: hidden;
+    /*background-color: #034f5246;*/
+
 }
 
 
@@ -232,13 +234,14 @@ h4 {
     max-width: 35rem;
     /*padding-top: 100px;*/
     /*color: black;*/
-    background: linear-gradient(6deg, #377cca, #f54444, #e9b6b2);
+    background: #12cdd4;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1px;
     /*text-align: center;*/
     margin-left: 10px;
     overflow: hidden;
+    text-align: center;
 }
 
 h5 {
@@ -247,13 +250,14 @@ h5 {
     max-width: 35rem;
     /*padding-top: 100px;*/
     /*color: black;*/
-    background: linear-gradient(6deg, #e7c8c7, #61fefa, #a793ff);
+    background: #fdfd96;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1px;
     /*text-align: center;*/
     margin-left: 10px;
     overflow: hidden;
+    text-align: center;
 }
 
 h6 {
@@ -262,13 +266,14 @@ h6 {
     max-width: 35rem;
     /*padding-top: 100px;*/
     /*color: black;*/
-    background: linear-gradient(6deg, #eb99b8, #6265f8, #bbabff);
+    background: #ff9661;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1px;
     /*text-align: center;*/
     margin-left: 10px;
     overflow: hidden;
+    text-align: center;
 }
 
 .container-aulas {
@@ -310,7 +315,16 @@ h6 {
     color: #e4e4e4;
     bottom: -240px;
     transition: bottom 0.3s ease;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    background: black;
+}
+
+.DifEffect {
+    height: 8px;
+    width: 350px;
+    bottom: 42px;
+    position: absolute;
+    transition: bottom 0.3s ease;
+    background: black;
 }
 
 .dificuldade-aulas:hover {
@@ -319,7 +333,12 @@ h6 {
 
 .dificuldade-aulas:hover .intro {
     bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+    background: black;
+}
+
+.dificuldade-aulas:hover .DifEffect {
+    bottom: 281px;
+    background: black;
 }
 
 .dificuldade-aulas:hover p {
@@ -329,6 +348,7 @@ h6 {
 
 .dificuldade-aulas:hover img {
     transform: scale(1.1);
+    filter: blur(10px);
 }
 
 
@@ -349,11 +369,22 @@ h6 {
 
 footer {
     background-color: #000000;
-    color: #cacaca;
+    color: white;
     font-family: "Cabin-Light", Arial, sans-serif;
     font-size: small;
     display: flex;
     justify-content: space-between;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #12cdd4;
 }
 
 footer p {
@@ -363,6 +394,7 @@ footer p {
 footer p:hover {
     cursor: pointer;
     text-decoration: underline;
+    color: #12cdd4;
 }
 
 .footer-left,

@@ -2,7 +2,7 @@
 
 # [Didatic Beat]
 
-[Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.]
+O Projeto Didatic Beat é uma plataforma de videoaulas de música desenvolvida com o intuito de proporcionar um ambiente educacional dinâmico e acessível para estudantes e entusiastas de música de todos os níveis de habilidade. A plataforma oferece uma ampla variedade de cursos e tutoriais ministrados por instrutores qualificados e experientes, abrangendo diversos instrumentos musicais, teoria musical, composição, produção musical e muito mais.
 
 ## Alunos integrantes da equipe
 

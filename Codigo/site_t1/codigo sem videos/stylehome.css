@@ -204,7 +204,8 @@ h3 {
 }
 
 .aulas {
-    margin-top: 35px;
+    margin-top: 50px;
+    margin-bottom: 80px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -218,6 +219,28 @@ h3 {
     display: flex;
     overflow: hidden;
 }
+
+
+.bk-aulas-y {
+    top: 800px;
+    right: 225px;
+    position: absolute;
+    width: calc(100% - 400px);
+    height: 1000px;
+    background-color: #fdfd96;
+    z-index: -1;
+}
+
+.bk-aulas-r {
+    top: 850px;
+    right: 175px;
+    position: absolute;
+    width: calc(100% - 400px);
+    height: 1000px;
+    background-color: #ff6961;
+    z-index: -2;
+}
+
 
 .imagens-artistas img {
     width: 600px !important;

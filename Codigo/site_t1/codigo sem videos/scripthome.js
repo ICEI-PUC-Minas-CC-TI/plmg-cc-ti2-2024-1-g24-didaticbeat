@@ -11,7 +11,7 @@ if (localStorage.getItem("userLogado")) {
   nav.removeChild(sign.parentElement);
 }
 else {
-  nav.removeChild(perfil);
+  nav.removeChild(perfil.parentElement);
 }
 
 

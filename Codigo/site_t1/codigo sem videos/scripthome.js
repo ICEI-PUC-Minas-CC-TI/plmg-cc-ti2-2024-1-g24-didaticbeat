@@ -4,22 +4,31 @@ const sign = document.querySelector('#sign');
 const videoaulas = document.querySelector('#vid')
 const perfil = document.querySelector('#perfil')
 const adicionar = document.querySelector('#adicionar')
+const nav = document.querySelector('.navigation')
+
+if (localStorage.getItem("userLogado")) {
+  nav.removeChild(log.parentElement);
+  nav.removeChild(sign.parentElement);
+}
+else {
+  nav.removeChild(perfil);
+}
 
 
 
-log.addEventListener('click', function() {
+log.addEventListener('click', function () {
   window.location.href = 'forms.html';
 });
 
-sign.addEventListener('click', function() {
-    window.location.href = 'forms.html';
+sign.addEventListener('click', function () {
+  window.location.href = 'forms.html';
 });
 
-videoaulas.addEventListener('click', function() {
+videoaulas.addEventListener('click', function () {
   window.location.href = 'indexvideoaulas.html';
 });
 
-perfil.addEventListener('click', function() {
+perfil.addEventListener('click', function () {
   window.location.href = 'indexperfil.html';
 });
 
@@ -40,37 +49,37 @@ co2.style.display = 'none';
 co3.style.display = 'none';
 
 // Adiciona os event listeners para as divs di1, di2 e di3
-di1.addEventListener('click', function() {
+di1.addEventListener('click', function () {
   co1.style.display = 'flex';
   co2.style.display = 'none';
   co3.style.display = 'none';
 });
 
-di2.addEventListener('click', function() {
+di2.addEventListener('click', function () {
   co1.style.display = 'none';
   co2.style.display = 'flex';
   co3.style.display = 'none';
 });
 
-di3.addEventListener('click', function() {
+di3.addEventListener('click', function () {
   co1.style.display = 'none';
   co2.style.display = 'none';
   co3.style.display = 'flex';
 });
 
-x1.addEventListener('click', function() {
+x1.addEventListener('click', function () {
   co1.style.display = 'none';
   co2.style.display = 'none';
   co3.style.display = 'none';
 });
 
-x2.addEventListener('click', function() {
+x2.addEventListener('click', function () {
   co1.style.display = 'none';
   co2.style.display = 'none';
   co3.style.display = 'none';
 });
 
-x3.addEventListener('click', function() {
+x3.addEventListener('click', function () {
   co1.style.display = 'none';
   co2.style.display = 'none';
   co3.style.display = 'none';
@@ -79,10 +88,11 @@ x3.addEventListener('click', function() {
 
 
 //Mensagem estilizada no console
-console.log("                                             ");
-console.log(" _____ _       _   _         _     _ _       ");
-console.log("| __  | |_ _ _| |_| |_ _____|_|___|_| |_ _ _ ");
-console.log("|    -|   | | |  _|   |     | |  _| |  _| | |");
-console.log("|__|__|_|_|_  |_| |_|_|_|_|_|_|___|_|_| |_  |");
-console.log("          |___|                         |___|");
-console.log("                                             ");
+console.log("                               ");
+console.log("╭━━━╮╱╱╭╮╱╱╭╮╱╱╱╱╱╭━━╮╱╱╱╱╱╱╭╮ ");
+console.log("╰╮╭╮┃╱╱┃┃╱╭╯╰╮╱╱╱╱┃╭╮┃╱╱╱╱╱╭╯╰╮");
+console.log("╱┃┃┃┣┳━╯┣━┻╮╭╋┳━━╮┃╰╯╰┳━━┳━┻╮╭╯");
+console.log("╱┃┃┃┣┫╭╮┃╭╮┃┃┣┫╭━╯┃╭━╮┃┃━┫╭╮┃┃ ");
+console.log("╭╯╰╯┃┃╰╯┃╭╮┃╰┫┃╰━╮┃╰━╯┃┃━┫╭╮┃╰╮");
+console.log("╰━━━┻┻━━┻╯╰┻━┻┻━━╯╰━━━┻━━┻╯╰┻━╯");
+console.log("                               ");

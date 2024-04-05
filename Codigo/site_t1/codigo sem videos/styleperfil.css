@@ -1,51 +1,55 @@
-
-.header-navbar
-{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    position: absolute;
+}
+
+.header-navbar {
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;
-    background: #490457;
+    background: #000000;
     /*background: #5b008f;*/
-    padding: 20px 40px;
+    padding: 0px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 15px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+
 }
 
 /*Configurações da Logo da navbar*/
 .logo img {
-    max-width: 200px;
-    display: block; 
-    margin: auto; 
+    max-width: 70px;
+    display: block;
+    margin: auto;
 }
 
 /*Configurações e alinhamentos da navbar*/
-.group
-{
+.group {
     display: flex;
     align-items: center;
 }
 
 /*Distância e configurações dos itens da navbar*/
-header ul
-{
+header ul {
     position: relative;
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
-header ul li
-{
+header ul li {
     list-style: none;
+    text-align: center;
+    height: fit-content;
 }
 
 /*Configurações do TEXTO dos itens da navbar*/
-header ul li a 
-{
+header ul li a {
     position: relative;
     text-decoration: none;
     font: 1em;
@@ -53,9 +57,9 @@ header ul li a
     text-transform: uppercase;
     letter-spacing: 0.2em;
 }
+
 /*Linha que fica embaixo dos itens quando passa o mouse em cima */
-header ul li a::before
-{
+header ul li a::before {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -67,15 +71,13 @@ header ul li a::before
     transform-origin: right;
 }
 
-header ul li a:hover::before
-{
+header ul li a:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
 
 /*Configurações da barra de pesquisa*/
-header .search
-{
+header .search {
     position: relative;
     display: flex;
     justify-content: center;
@@ -86,13 +88,11 @@ header .search
     color: #E8E8E8;
 }
 
-.searchBox.active
-{
+.searchBox.active {
     right: 0;
 }
 
-.searchBox
-{
+.searchBox {
     position: absolute;
     right: -100%;
     width: 100%;
@@ -104,35 +104,31 @@ header .search
     transition: 0.5 ease-in-out;
 }
 
-.searchBox input
-{
+.searchBox input {
     width: 100%;
     border: none;
     outline: none;
     height: 50px;
     color: #E8E8E8;
     font-size: 1.25em;
-    background:#490457;
+    background: #490457;
     border-bottom: 1px solid #E8E8E8;
 }
 
 /*Configurações do botão de pesquisa (lupa)*/
-.searchBtn
-{
+.searchBtn {
     position: relative;
     left: 30px;
     top: 2.5px;
     transition: 0.5s ease-in-out;
 }
 
-.searchBtn.active
-{
+.searchBtn.active {
     left: 0;
 }
 
 /*Configurações do botão de fechar*/
-.closeBtn
-{
+.closeBtn {
     opacity: 0;
     visibility: hidden;
     transition: 0;
@@ -140,8 +136,7 @@ header .search
 }
 
 /*Configuração da função da lupa sumir e o botao 'x' aparecer quando a barra de pesquisa se expande*/
-.closeBtn.active
-{
+.closeBtn.active {
     opacity: 1;
     visibility: visible;
     transition: 0.5s;
@@ -157,38 +152,38 @@ header .search
 }
 
 /*Responsividade da navbar*/
-.menuToggle
-{
+.menuToggle {
     position: relative;
     display: none;
     color: #E8E8E8;
 }
 
 /*Configurações pra aparecer o menu sanduiche em uma determinada resolução*/
-@media (max-width: 800px)
-{
-    .searchBtn
-    {
+@media (max-width: 800px) {
+    .searchBtn {
         left: 0;
     }
-    .menuToggle
-    {
-        position:absolute;
+
+    .menuToggle {
+        position: absolute;
         display: block;
         font-size: 2em;
         cursor: pointer;
         transform: translateX(30px);
         z-index: 10;
     }
-    header .navigation
-    {
-      position: absolute;
-      opacity: 0;
-      visibility: hidden;
-      left: 100%;
+
+    header .navigation {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 100%;
     }
-    header.open .navigation /* Quando clicar no menu sanduíche, expandir a tela*/
-    {
+
+    header.open .navigation
+
+    /* Quando clicar no menu sanduíche, expandir a tela*/
+        {
         top: 80px;
         opacity: 1;
         visibility: visible;
@@ -199,14 +194,13 @@ header .search
         width: 100%;
         height: calc(100vh - 80px);
         padding: 40px;
-        border-top: 1px solid rgba(0,0,0,0.05);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
 
-    header.open .navigation li a 
-    {
+    header.open .navigation li a {
         font-size: 1.25em;
     }
-}  
+}
 
 body {
     background: #E8E8E8;
@@ -234,8 +228,9 @@ main {
 }
 
 .form-control::placeholder {
-    color: #490457 !important ; 
+    color: #490457 !important;
 }
+
 .form-control {
-    color: #490457 !important; 
+    color: #490457 !important;
 }

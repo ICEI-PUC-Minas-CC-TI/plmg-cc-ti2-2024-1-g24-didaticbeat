@@ -15,69 +15,73 @@
 </head>
 
 <body>
-<!--Navbar / FELIPE VILHENA DIAS-->
-<header class="header-navbar"> 
+    <!--Navbar / FELIPE VILHENA DIAS-->
+    <header class="header-navbar">
 
-    <a href="#" class="logo" id="logotype">
-        <img src="images\rhythmicity logotipo branco.png" alt="Logo1"> <!-- Logo do Projeto Rythmicity -->
-      </a>
-    <div class="group">
-        <ul class="navigation"> <!-- Funcionalidades da barra de navegação -->
-            <li><a href="#" id="log">Login</a></li>
-            <li><a href="#" id="sign">Cadastrar-se</a></li>
-            <li><a href="#" id="vid">Meus Estudos</a></li>
-            <li><a href="#" >Sobre</a></li>
-            <li><a href="#" id="perfil"><ion-icon size= "large" name="person-circle-outline"></ion-icon></a></li>            
-
-        </ul>
-        <div class="search"> <!-- Barra de pesquisa da navbar -->
-            <span class="icon">
-                <ion-icon name="search-outline"
-                class="searchBtn"></ion-icon>  <!-- Botão de pesquisa pego da biblioteca ionicons -->
-                <ion-icon name="close-outline"
-                class="closeBtn"></ion-icon> <!-- Botão de fechar pego da biblioteca ionicons -->
-            </span>
+        <a href="index.html" class="logo" id="logotype">
+            <img src="images\DBNoteLogo.jpg" alt="Logo1"> <!-- Logo do Projeto Rythmicity -->
+        </a>
+        <div class="group">
+            <ul class="navigation"> <!-- Funcionalidades da barra de navegação -->
+                <!-- <li><a href="#" id="log">Login</a></li> -->
+                <!-- <li><a href="#" id="sign">Cadastrar-se</a></li> -->
+                <li><a href="#" id="vid">Meus Estudos</a></li>
+                <!-- <li><a href="loja.html">Loja</a></li> -->
+                <!-- <li><a href="Carrinho.html" id="carrinho">Seu Carrinho</a></li> -->
+                <!-- <li><a href="#">Sobre</a></li> -->
+                <!-- <li><a href="#" id="perfil"><ion-icon size="large" name="person-circle-outline"></ion-icon></a></li> -->
+            </ul>
+            <div class="search"> <!-- Barra de pesquisa da navbar -->
+                <span class="icon">
+                    <ion-icon name="search-outline" class="searchBtn"></ion-icon>
+                    <!-- Botão de pesquisa pego da biblioteca ionicons -->
+                    <ion-icon name="close-outline" class="closeBtn"></ion-icon>
+                    <!-- Botão de fechar pego da biblioteca ionicons -->
+                </span>
+            </div>
+            <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
         </div>
-        <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
-    </div>
-    <div class="searchBox">
-        <input type="text" placeholder="Studies, Lessons, Instruments. . . "> <!-- Barra de pesquisa e placeholder para pesquisa  -->
-    </div>
-</header>
+        <div class="searchBox">
+            <input type="text" placeholder="Studies, Lessons, Instruments. . . ">
+            <!-- Barra de pesquisa e placeholder para pesquisa  -->
+        </div>
+    </header>
     <main class="p-3">
         <div class="container justify-content-center align-items-center">
             <div class="card col-md-12" style="background-color: #44205c;">
                 <div class="row g-0">
                     <div class="col-md-2 p-3 ml-3">
-                        <img id="fotoPerfil" src="/images/profile.png" class="img-fluid rounded-start"
-                            alt="img Perfil">
+                        <img id="fotoPerfil" src="/images/profile.png" class="img-fluid rounded-start" alt="img Perfil">
                     </div>
                     <div class="col-md-10">
                         <div class="card-header">
                             <h5 id="usuario" style="color: #E8E8E8"></h5>
-                          </div>
-                          <div class="card-body" style="color: #E8E8E8; background-color: #44205c;">
+                        </div>
+                        <div class="card-body" style="color: #E8E8E8; background-color: #44205c;">
                             <label for="nomeUsuario"></label>
-                          </div>
-                          <div class="card-footer" style="color: #E8E8E8; background-color: #44205c;">
+                        </div>
+                        <div class="card-footer" style="color: #E8E8E8; background-color: #44205c;">
                             <container id="show">
-                              <h6 id="about" style="color: #E8E8E8;"></h6>
-                              <h6 id="userName" style="color: #E8E8E8;"></h6>
-                              <button id="btn_editar" style="background-color: #490457; color: #E8E8E8; border-style: none;">Editar</button>
+                                <h6 id="about" style="color: #E8E8E8;"></h6>
+                                <h6 id="userName" style="color: #E8E8E8;"></h6>
+                                <button id="btn_editar"
+                                    style="background-color: #490457; color: #E8E8E8; border-style: none;">Editar</button>
                             </container>
                             <container id="edit">
-                              <textarea type="text" id="sobreMim" style="min-width: 600px; min-height: 200px;"></textarea>
-                              <button id="btn_salvar" style="background-color: #490457; color: #E8E8E8; border-style: none;">Salvar</button>
+                                <textarea type="text" id="sobreMim"
+                                    style="min-width: 600px; min-height: 200px;"></textarea>
+                                <button id="btn_salvar"
+                                    style="background-color: #490457; color: #E8E8E8; border-style: none;">Salvar</button>
                             </container>
-                          </div>
-                          
-
                         </div>
+
+
                     </div>
                 </div>
             </div>
         </div>
-       
+        </div>
+
 
     </main>
 
@@ -91,21 +95,21 @@
         let menuToggle = document.querySelector('.menuToggle');
         let header = document.querySelector('header');
 
-       // função para barra de pesquisa aparecer e sumir da navbar
-        searchBtn.onclick = function() {
-          searchBox.classList.add('active');
-          closeBtn.classList.add('active');
-          searchBtn.classList.add('hidden'); // Adiciona a classe 'hidden' para ocultar o botão de pesquisa
+        // função para barra de pesquisa aparecer e sumir da navbar
+        searchBtn.onclick = function () {
+            searchBox.classList.add('active');
+            closeBtn.classList.add('active');
+            searchBtn.classList.add('hidden'); // Adiciona a classe 'hidden' para ocultar o botão de pesquisa
         }
-      
-        closeBtn.onclick = function() {
-          searchBox.classList.remove('active');
-          closeBtn.classList.remove('active');
-          searchBtn.classList.remove('hidden'); // Remove a classe 'hidden' para exibir o botão de pesquisa novamente
+
+        closeBtn.onclick = function () {
+            searchBox.classList.remove('active');
+            closeBtn.classList.remove('active');
+            searchBtn.classList.remove('hidden'); // Remove a classe 'hidden' para exibir o botão de pesquisa novamente
         }
 
         // responsividade da navbar
-        menuToggle.onclick = function(){
+        menuToggle.onclick = function () {
             header.classList.toggle('open');
 
         }

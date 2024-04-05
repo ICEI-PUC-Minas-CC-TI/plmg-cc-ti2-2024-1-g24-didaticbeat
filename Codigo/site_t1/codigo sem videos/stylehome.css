@@ -836,7 +836,7 @@ h1 {
     height: 80px;
     background: #000000;
     /*background: #5b008f;*/
-    padding: 20px 40px;
+    padding: 0px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -862,10 +862,13 @@ header ul {
     position: relative;
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 header ul li {
     list-style: none;
+    text-align: center;
+    height: fit-content;
 }
 
 /*Configurações do TEXTO dos itens da navbar*/
@@ -998,6 +1001,8 @@ header .search {
         opacity: 0;
         visibility: hidden;
         left: 100%;
+        display: flex;
+        align-items: center;
     }
 
     header.open .navigation

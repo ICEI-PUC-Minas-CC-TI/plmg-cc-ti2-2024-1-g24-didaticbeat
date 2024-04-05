@@ -6,39 +6,61 @@
   border-radius: 5px;
 }
 
-.header-navbar {
+body .header-navbar {
   border-radius: 0;
-  border-bottom: white double 6px;
+  border-bottom: #12cdd4 double 6px;
+  height: 86px;
 }
 
 body {
-  display: flex;
+  margin-;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: linear-gradient(white, #d0dbdb);
+  background: linear-gradient(white, #e9f0f0);
 }
 
 .container {
-  display: flex;
+  display: flexbox;
   gap: 30px;
-  margin: 20px 10px;
-  margin-top: 150px;
-  background-color: #E8E8E8;
-  padding: 10px;
   align-self: flex-start;
+  width: 100%;
+  border-radius: 0;
+  border-bottom: black double 6px;
+  padding-bottom: 10px;
+}
+
+.addB {
+  margin: 0 20px;
+  margin-top: 10px;
+  height: 35px;
+}
+
+.addB a {
+  text-decoration: none;
+  color: #12cdd4;
+  text-align: end;
+  display: block;
+  position: absolute;
+  padding: 3px;
+  border-radius: 10px;
+  border: #12cdd4 solid 5px;
+  width: fit-content;
+  right: 50px;
 }
 
 .main-video-content {
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 5px;
   padding: 10px;
-  box-shadow: 0 1px 2px gray;
+  border-radius: 0;
+  background-color: #12cdd4;
+  border-bottom: white double 6px;
 }
 
 .main-video-content video {
-  width: 600px;
+  width: 700px;
 }
 
 .playlist {
@@ -70,8 +92,12 @@ body {
 }
 
 .active {
-  background-color: #490457;
+  background-color: black;
   color: #E8E8E8;
+}
+
+.index-video {
+  margin: 0px 20px;
 }
 
 .playlist-video video {
@@ -82,7 +108,6 @@ body {
 @media (max-width: 1600px) {
   .container {
     flex-direction: column;
-    margin-top: 60px;
     height: -webkit-fill-available;
   }
 
@@ -94,7 +119,7 @@ body {
 
 /*Cor e configurações da navbar*/
 .header-navbar {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -148,13 +173,14 @@ footer {
   color: white;
   font-family: "Cabin-Light", Arial, sans-serif;
   font-size: small;
-  display: flex;
+  display: flexbox;
   justify-content: space-between;
-  position: absolute;
+  position: relative;
   padding: 10px 0;
   bottom: 0;
   width: 100%;
   border-radius: 0;
+  border-top: none;
 }
 
 footer a {

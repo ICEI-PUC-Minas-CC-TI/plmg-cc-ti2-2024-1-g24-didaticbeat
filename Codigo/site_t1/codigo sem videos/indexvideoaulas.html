@@ -21,10 +21,9 @@
       <ul class="navigation"> <!-- Funcionalidades da barra de navegação -->
         <li><a href="#" id="log">Login</a></li>
         <li><a href="#" id="sign">Cadastrar-se</a></li>
-        <li><a href="#" id="vid">Meus Estudos</a></li>
         <!-- <li><a href="loja.html">Loja</a></li> -->
         <!-- <li><a href="Carrinho.html" id="carrinho">Seu Carrinho</a></li>-->
-        <li><a href="#">Sobre</a></li>
+        <!-- <li><a href="#">Sobre</a></li> -->
         <li><a href="#" id="perfil"><ion-icon size="large" name="person-circle-outline"></ion-icon></a></li>
       </ul>
       <div class="search"> <!-- Barra de pesquisa da navbar -->
@@ -45,13 +44,13 @@
 
   <div class="container">
     <div class="main-video-content">
-      <video src="" controls muted autoplay></video>
       <label class="main-info"></label>
+      <video src="" controls muted autoplay></video>
     </div>
     <div class="playlist"></div>
-  </div>
-  <div>
-    <li><a href="#" id="adicionar">Adicionar video aula</a></li>
+    <div class="addB">
+      <a href="#" id="adicionar">Adicionar video aula</a>
+    </div>
   </div>
 
   <footer>
@@ -71,7 +70,39 @@
     </div>
   </footer>
 
+  <script>
+    // variaveis
+    let searchBtn = document.querySelector('.searchBtn');
+    let closeBtn = document.querySelector('.closeBtn');
+    let searchBox = document.querySelector('.searchBox');
+    let navigation = document.querySelector('.navigation');
+    let menuToggle = document.querySelector('.menuToggle');
+    let header = document.querySelector('header');
+
+    // função para barra de pesquisa aparecer e sumir da navbar
+    searchBtn.onclick = function () {
+      searchBox.classList.add('active');
+      closeBtn.classList.add('active');
+      searchBtn.classList.add('hidden'); // Adiciona a classe 'hidden' para ocultar o botão de pesquisa
+    }
+
+    closeBtn.onclick = function () {
+      searchBox.classList.remove('active');
+      closeBtn.classList.remove('active');
+      searchBtn.classList.remove('hidden'); // Remove a classe 'hidden' para exibir o botão de pesquisa novamente
+    }
+
+    // responsividade da navbar
+    menuToggle.onclick = function () {
+      header.classList.toggle('open');
+
+    }
+  </script>
+
   <script src="scriptvideoaulas.js" type="module"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

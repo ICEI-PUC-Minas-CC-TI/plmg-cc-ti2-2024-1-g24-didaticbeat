@@ -1,6 +1,33 @@
+
 const adicionar = document.querySelector('#adicionar')
 
-adicionar.addEventListener('click', function() {
+//Redirecionamento ao clicar em botões da navbar
+const log = document.querySelector('#log');
+const sign = document.querySelector('#sign');
+const perfil = document.querySelector('#perfil')
+const nav = document.querySelector('.navigation')
+
+if (localStorage.getItem("userLogado")) {
+  nav.removeChild(log.parentElement);
+  nav.removeChild(sign.parentElement);
+}
+else {
+}
+
+log.addEventListener('click', function () {
+  window.location.href = 'forms.html';
+});
+
+sign.addEventListener('click', function () {
+  window.location.href = 'forms.html';
+});
+
+
+perfil.addEventListener('click', function () {
+  window.location.href = 'indexperfil.html';
+});
+
+adicionar.addEventListener('click', function () {
   window.location.href = 'indexcadastrovideoaulas.html';
 });
 
@@ -15,10 +42,11 @@ function loadVideos() {
 
     div.innerHTML = `
       <div class="playlist-video ${index + 1 === 1 && "active"}">
-        <video src=${video.src} muted></video>
         <label class="playlist-video-info">${video.title}</label>
+        <video src=${video.src} muted></video>
       </div>
     `;
+    div.className = "index-video"
 
     playlist_area.appendChild(div);
   });
@@ -45,8 +73,8 @@ function addOnClick() {
 }
 
 function setVideo(video_main, item) {
-  video_main.children[0].src = item.children[0].getAttribute("src");
-  video_main.children[1].innerHTML = item.children[1].innerHTML;
+  video_main.children[0].innerHTML = item.children[0].innerHTML;
+  video_main.children[1].src = item.children[1].getAttribute("src");
 }
 
 loadVideos();
@@ -54,10 +82,4 @@ loadVideos();
 
 
 //Mensagem estilizada no console
-console.log("                                             ");
-console.log(" _____ _       _   _         _     _ _       ");
-console.log("| __  | |_ _ _| |_| |_ _____|_|___|_| |_ _ _ ");
-console.log("|    -|   | | |  _|   |     | |  _| |  _| | |");
-console.log("|__|__|_|_|_  |_| |_|_|_|_|_|_|___|_|_| |_  |");
-console.log("          |___|                         |___|");
-console.log("                                             ");
+console.log("\n╭━━━╮╱╱╭╮╱╱╭╮╱╱╱╱╱╭━━╮╱╱╱╱╱╱╭╮ \n╰╮╭╮┃╱╱┃┃╱╭╯╰╮╱╱╱╱┃╭╮┃╱╱╱╱╱╭╯╰╮\n╱┃┃┃┣┳━╯┣━┻╮╭╋┳━━╮┃╰╯╰┳━━┳━┻╮╭╯\n╱┃┃┃┣┫╭╮┃╭╮┃┃┣┫╭━╯┃╭━╮┃┃━┫╭╮┃┃ \n╭╯╰╯┃┃╰╯┃╭╮┃╰┫┃╰━╮┃╰━╯┃┃━┫╭╮┃╰╮\n╰━━━┻┻━━┻╯╰┻━┻┻━━╯╰━━━┻━━┻╯╰┻━╯\n                               ");

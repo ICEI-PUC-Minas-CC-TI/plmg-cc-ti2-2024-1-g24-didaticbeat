@@ -15,10 +15,12 @@
   
   .container {
     display: flex;
-    gap: 15px;
+    gap: 30px;
     margin: 20px 10px;
+    margin-top: 150px;
     background-color: #E8E8E8;
     padding: 10px;
+    align-self:flex-start;
   }
   
   .main-video-content {
@@ -70,7 +72,7 @@
   }
   
   
-  @media (max-width: 900px) {
+  @media (max-width: 1600px) {
     .container {
       flex-direction: column;
       margin-top: 60px;
@@ -81,3 +83,114 @@
       width: 100%;
     }
   }
+
+  /*Cor e configurações da navbar*/
+.header-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #000000;
+  /*background: #5b008f;*/
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+}
+
+/*Configurações da Logo da navbar*/
+.logo img {
+  max-width: 70px;
+  display: block;
+  margin: auto;
+}
+
+/*Configurações e alinhamentos da navbar*/
+.group {
+  display: flex;
+  align-items: center;
+}
+
+/*Distância e configurações dos itens da navbar*/
+header ul {
+  position: relative;
+  display: flex;
+  gap: 30px;
+}
+
+header ul li {
+  list-style: none;
+}
+
+/*Configurações do TEXTO dos itens da navbar*/
+header ul li a {
+  position: relative;
+  text-decoration: none;
+  font: 1em;
+  color: #E8E8E8;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/*configurações do footer */
+  footer {
+    background-color: #000000;
+    color: white;
+    font-family: "Cabin-Light", Arial, sans-serif;
+    font-size: small;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #12cdd4;
+}
+
+footer p {
+    margin-top: 5px;
+}
+
+footer p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #12cdd4;
+}
+
+.footer-left,
+.footer-right {
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.footer-right {
+    text-align: right;
+    margin-right: 100px;
+}
+
+.footer-left {
+    margin-left: 100px;
+}
+
+.copyright {
+    font-size: smaller;
+    margin-top: 60px;
+}
+
+.copyright:hover {
+    cursor: auto;
+    text-decoration: none;
+}

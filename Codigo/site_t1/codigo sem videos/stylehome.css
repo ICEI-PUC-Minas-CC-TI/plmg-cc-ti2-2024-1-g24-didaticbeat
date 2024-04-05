@@ -374,6 +374,7 @@ footer {
     font-size: small;
     display: flex;
     justify-content: space-between;
+    border-top: white double 6px;
 }
 
 footer a {

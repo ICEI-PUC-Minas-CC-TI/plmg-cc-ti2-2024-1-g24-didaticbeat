@@ -1,90 +1,98 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
-    border-radius: 5px;
-  }
-  
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+  border-radius: 5px;
+}
+
+.header-navbar {
+  border-radius: 0;
+  border-bottom: white double 6px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(white, #d0dbdb);
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  margin: 20px 10px;
+  margin-top: 150px;
+  background-color: #E8E8E8;
+  padding: 10px;
+  align-self: flex-start;
+}
+
+.main-video-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  box-shadow: 0 1px 2px gray;
+}
+
+.main-video-content video {
+  width: 600px;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+  max-height: 400px;
+  padding: 2px;
+}
+
+.playlist::-webkit-scrollbar {
+  width: 6px;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: gray;
+}
+
+.playlist-video {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  box-shadow: 0 1px 2px gray;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #490457;
+  color: #E8E8E8;
+}
+
+.playlist-video video {
+  width: 100px;
+}
+
+
+@media (max-width: 1600px) {
   .container {
-    display: flex;
-    gap: 30px;
-    margin: 20px 10px;
-    margin-top: 150px;
-    background-color: #E8E8E8;
-    padding: 10px;
-    align-self:flex-start;
-  }
-  
-  .main-video-content {
-    display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding: 10px;
-    box-shadow: 0 1px 2px gray;
-  }
-  
-  .main-video-content video {
-    width: 600px;
-  }
-  
-  .playlist {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    overflow: auto;
-    max-height: 400px;
-    padding: 2px;
-  }
-  
-  .playlist::-webkit-scrollbar {
-    width: 6px;
-  }
-  .playlist::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: gray; 
-  }
-  
-  .playlist-video {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px;
-    box-shadow: 0 1px 2px gray;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-  
-  .active {
-    background-color: #490457;
-    color: #E8E8E8;
-  }
-  
-  .playlist-video video{
-    width: 100px;
-  }
-  
-  
-  @media (max-width: 1600px) {
-    .container {
-      flex-direction: column;
-      margin-top: 60px;
-      height: -webkit-fill-available;
-    }
-  
-    .container, .main-video-content video {
-      width: 100%;
-    }
+    margin-top: 60px;
+    height: -webkit-fill-available;
   }
 
-  /*Cor e configurações da navbar*/
+  .container,
+  .main-video-content video {
+    width: 100%;
+  }
+}
+
+/*Cor e configurações da navbar*/
 .header-navbar {
   position: absolute;
   top: 0;
@@ -135,62 +143,63 @@ header ul li a {
 }
 
 /*configurações do footer */
-  footer {
-    background-color: #000000;
-    color: white;
-    font-family: "Cabin-Light", Arial, sans-serif;
-    font-size: small;
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    padding: 10px 0;
-    bottom: 0;
-    width: 100%;
+footer {
+  background-color: #000000;
+  color: white;
+  font-family: "Cabin-Light", Arial, sans-serif;
+  font-size: small;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  padding: 10px 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0;
 }
 
 footer a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 footer a:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    color: #12cdd4;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #12cdd4;
 }
 
 footer p {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 footer p:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    color: #12cdd4;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #12cdd4;
 }
 
 .footer-left,
 .footer-right {
-    text-align: left;
-    margin-top: 50px;
-    margin-bottom: 30px;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .footer-right {
-    text-align: right;
-    margin-right: 100px;
+  text-align: right;
+  margin-right: 100px;
 }
 
 .footer-left {
-    margin-left: 100px;
+  margin-left: 100px;
 }
 
 .copyright {
-    font-size: smaller;
-    margin-top: 60px;
+  font-size: smaller;
+  margin-top: 60px;
 }
 
 .copyright:hover {
-    cursor: auto;
-    text-decoration: none;
+  cursor: auto;
+  text-decoration: none;
 }

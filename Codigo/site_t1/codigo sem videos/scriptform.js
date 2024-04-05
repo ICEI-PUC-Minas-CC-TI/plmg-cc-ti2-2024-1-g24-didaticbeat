@@ -5,6 +5,21 @@ const passwordFields = document.querySelectorAll('.password');
 const eyeIcons = document.querySelectorAll('.olho-senha');
 const forms = document.querySelector('.forms');
 
+const nav = document.querySelector('.navigation')
+const videoaulas = document.querySelector('#vid')
+
+if (localStorage.getItem("userLogado")) {
+  window.location.href = 'indexperfil.html';
+}
+
+videoaulas.addEventListener('click', function () {
+  window.location.href = 'indexvideoaulas.html';
+});
+
+adicionar.addEventListener('click', function () {
+  window.location.href = 'indexcadastrovideoaulas.html';
+});
+
 eyeIcons.forEach((icon, index) => {
   icon.addEventListener('click', () => {
     const type = passwordFields[index].getAttribute('type') === 'password' ? 'text' : 'password';
@@ -33,11 +48,11 @@ const confirmPassword = document.getElementById("signup-confirm-password");
 const error = document.getElementById("password-error");
 
 function checkPassword() {
-if (password.value !== confirmPassword.value) {
-error.innerHTML = "As senhas não coincidem.";
-} else {
-error.innerHTML = "";
-}
+  if (password.value !== confirmPassword.value) {
+    error.innerHTML = "As senhas não coincidem.";
+  } else {
+    error.innerHTML = "";
+  }
 }
 
 confirmPassword.addEventListener("keyup", checkPassword);
@@ -50,20 +65,20 @@ const signUpButton = signUpForm.querySelector('button');
 signUpButton.addEventListener('click', (e) => {
   e.preventDefault();
   const firstName = signUpForm.querySelector('#first-name').value;
-const lastName = signUpForm.querySelector('#last-name').value;
-const email = signUpForm.querySelector('#signup-email').value;
-const password = signUpForm.querySelector('#signup-password').value;
+  const lastName = signUpForm.querySelector('#last-name').value;
+  const email = signUpForm.querySelector('#signup-email').value;
+  const password = signUpForm.querySelector('#signup-password').value;
 
-localStorage.setItem('firstName', firstName);
-localStorage.setItem('lastName', lastName);
-localStorage.setItem('email', email);
-localStorage.setItem('password', password);
+  localStorage.setItem('firstName', firstName);
+  localStorage.setItem('lastName', lastName);
+  localStorage.setItem('email', email);
+  localStorage.setItem('password', password);
 
-const fullName = `${firstName} ${lastName}`;
-localStorage.setItem('userLogado', JSON.stringify({ usuario: fullName, sobre: 'Escreva algo sobre você' }));
+  const fullName = `${firstName} ${lastName}`;
+  localStorage.setItem('userLogado', JSON.stringify({ usuario: fullName, sobre: 'Escreva algo sobre você' }));
 
-alert('Cadastro realizado com sucesso!');
-signUpForm.reset();
+  alert('Cadastro realizado com sucesso!');
+  signUpForm.reset();
 
 });
 
@@ -91,7 +106,7 @@ loginButton.addEventListener('click', (e) => {
 //Redirecionamento ao clicar no logotipo
 const logotype = document.querySelector('#logotype');
 
-logotype.addEventListener('click', function() {
+logotype.addEventListener('click', function () {
   window.location.href = 'index.html';
 });
 

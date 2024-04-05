@@ -40,36 +40,45 @@ const co1 = document.querySelector('#co1');
 const co2 = document.querySelector('#co2');
 const co3 = document.querySelector('#co3');
 const ol = document.querySelector('.overlay');
-const x1 = document.querySelector('#x1');
-const x2 = document.querySelector('#x2');
-const x3 = document.querySelector('#x3');
 
 // Oculta as divs de id "co(numero)"
 co1.style.display = 'none';
 co2.style.display = 'none';
 co3.style.display = 'none';
 ol.style.display = 'none';
+co1.style.visibility = 'hidden';
+co2.style.visibility = 'hidden';
+co3.style.visibility = 'hidden';
 
 // Adiciona os event listeners para as divs di1, di2 e di3
 di1.addEventListener('click', function () {
   ol.style.display = 'inherit';
   co1.style.display = 'flex';
+  co1.style.visibility = 'visible';
   co2.style.display = 'none';
+  co2.style.visibility = 'hidden';
   co3.style.display = 'none';
+  co3.style.visibility = 'hidden';
 });
 
 di2.addEventListener('click', function () {
   ol.style.display = 'inherit';
   co1.style.display = 'none';
+  co1.style.visibility = 'hidden';
   co2.style.display = 'flex';
+  co2.style.visibility = 'visible';
   co3.style.display = 'none';
+  co3.style.visibility = 'hidden';
 });
 
 di3.addEventListener('click', function () {
   ol.style.display = 'inherit';
   co1.style.display = 'none';
+  co1.style.visibility = 'hidden';
   co2.style.display = 'none';
+  co2.style.visibility = 'hidden';
   co3.style.display = 'flex';
+  co3.style.visibility = 'visible';
 });
 
 ol.addEventListener('click', function (evt) {
@@ -77,27 +86,9 @@ ol.addEventListener('click', function (evt) {
     return;
   }
   co1.style.display = 'none';
-  co2.style.display = 'none';
-  co3.style.display = 'none';
-  ol.style.display = 'none';
-});
-
-x1.addEventListener('click', function () {
-  co1.style.display = 'none';
-  co2.style.display = 'none';
-  co3.style.display = 'none';
-  ol.style.display = 'none';
-});
-
-x2.addEventListener('click', function () {
-  co1.style.display = 'none';
-  co2.style.display = 'none';
-  co3.style.display = 'none';
-  ol.style.display = 'none';
-});
-
-x3.addEventListener('click', function () {
-  co1.style.display = 'none';
+  co1.style.visibility = 'hidden';
+  co2.style.visibility = 'hidden';
+  co3.style.visibility = 'hidden';
   co2.style.display = 'none';
   co3.style.display = 'none';
   ol.style.display = 'none';

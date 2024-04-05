@@ -454,6 +454,7 @@ footer p:hover {
 #co2,
 #co3 {
     display: none;
+    visibility: hidden;
     background-size: 100%;
     width: 80%;
     height: 70%;
@@ -519,6 +520,7 @@ footer p:hover {
 
 #co1 {
     display: flex;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
     background-color: #07999e;
@@ -634,6 +636,7 @@ h1 {
 
 
 #co2 {
+    visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -728,6 +731,7 @@ h1 {
 
 #co3 {
     display: flex;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
     /*margin-left: -Xpx;*/

@@ -435,20 +435,33 @@ footer p:hover {
 
 
 
+.overlay {
+    position: fixed;
+    backdrop-filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+}
+
+.overlay:hover:has(#co1:not(:hover)):has(#co2:not(:hover)):has(#co3:not(:hover)) {
+    cursor: pointer;
+}
 
 #co1,
 #co2,
 #co3 {
     background-size: 100%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    height: 70%;
+    margin: 5% 10%;
+    background-color: rgb(44, 44, 44);
     /*padding: 100px;*/
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     position: fixed;
+    border-radius: 10px;
 }
 
 #x1,
@@ -506,6 +519,7 @@ footer p:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #07999e;
 }
 
 .infos-overlay {
@@ -622,15 +636,17 @@ h1 {
     align-items: center;
     justify-content: center;
     /*margin-left: -100px;*/
+    background-color: #9b9329;
 }
 
 #h22 {
-    margin-left: -153px;
+    margin-left: -33px;
 }
 
 #h23 {
-    margin-left: -41px;
+    margin-left: 10px;
 }
+
 
 #co21,
 #co22,
@@ -713,6 +729,7 @@ h1 {
     align-items: center;
     justify-content: center;
     /*margin-left: -Xpx;*/
+    background-color: #c45822;
 }
 
 #h32 {

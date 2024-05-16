@@ -641,7 +641,7 @@ h1 {
     align-items: center;
     justify-content: center;
     /*margin-left: -100px;*/
-    background-color: #9b9329;
+    background-color: rgb(153, 146, 41);
 }
 
 #h22 {
@@ -791,6 +791,111 @@ h1 {
 .atuais-overlay #co33:hover {
     /*transform: scale(1.03);*/
     transform: translateX(-2%);
+}
+
+
+/* Botões "Ir para aulas" nos overlays */
+/*INICIANTE*/
+.ir-para-aulas_01 {
+    background-color: #07999e; ; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    padding: 15px 30px; /* Espaçamento interno */
+    font-size: 18px; /* Tamanho da fonte */
+    border-radius: 8px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar */
+}
+
+.ir-para-aulas_01:hover {
+    background-color: #217679;/* Cor de fundo ao passar */
+}
+
+/* Botões "Fechar" nos overlays */
+#x1,
+#x2,
+#x3 {
+    color: #fff; /* Cor do ícone */
+    font-size: 24px; /* Tamanho do ícone */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer; /* Cursor ao passar */
+    z-index: 3000; /* Para ficar acima do overlay */
+}
+
+#x1:hover,
+#x2:hover,
+#x3:hover {
+    color: #ccc; /* Cor do ícone ao passar */
+}
+
+
+/*INTERMEDIARIO*/
+.ir-para-aulas_02 {
+    background-color: #999229;/* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    padding: 15px 30px; /* Espaçamento interno */
+    font-size: 18px; /* Tamanho da fonte */
+    border-radius: 8px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar */
+}
+
+.ir-para-aulas_02:hover {
+    background-color: #77711c;  /* Cor de fundo ao passar */
+}
+
+/* Botões "Fechar" nos overlays */
+#x1,
+#x2,
+#x3 {
+    color: #fff; /* Cor do ícone */
+    font-size: 24px; /* Tamanho do ícone */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer; /* Cursor ao passar */
+    z-index: 3000; /* Para ficar acima do overlay */
+}
+
+#x1:hover,
+#x2:hover,
+#x3:hover {
+    color: #ccc; /* Cor do ícone ao passar */
+}
+
+/*ACANÇADO*/
+.ir-para-aulas_03 {
+    background-color:#c45822;/* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remover borda */
+    padding: 15px 30px; /* Espaçamento interno */
+    font-size: 18px; /* Tamanho da fonte */
+    border-radius: 8px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar */
+}
+
+.ir-para-aulas_03:hover {
+    background-color: #9b4419;  /* Cor de fundo ao passar */
+}
+
+/* Botões "Fechar" nos overlays */
+#x1,
+#x2,
+#x3 {
+    color: #fff; /* Cor do ícone */
+    font-size: 24px; /* Tamanho do ícone */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer; /* Cursor ao passar */
+    z-index: 3000; /* Para ficar acima do overlay */
+}
+
+#x1:hover,
+#x2:hover,
+#x3:hover {
+    color: #ccc; /* Cor do ícone ao passar */
 }
 
 

@@ -9,7 +9,6 @@ O Projeto Didatic Beat é uma plataforma de videoaulas de música desenvolvida c
 * [Arthur Alves Batista de Lima Ferreira]
 * [Felipe Vilhena Dias]
 * [Gabriel Cunha Schlegel]
-* [Heitor Alvernaz Leite]
 * [Iago Fereguetti Ribeiro]
 
 ## Professores responsáveis

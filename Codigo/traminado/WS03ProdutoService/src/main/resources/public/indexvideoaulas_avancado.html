@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Didatic Beat - Video playlist</title>
+  <link rel="icon" href="images/DBlogo.jpg">
+  <link rel="stylesheet" href="stylehome.css">
+  <link rel="stylesheet" href="stylevideoaulas.css">
+</head>
+
+<body>
+  <header class="header-navbar">
+    <a href="index.html" class="logo" id="logotype">
+      <img src="images/DBNoteLogo.jpg" alt="Logo1"> <!-- Logo do Projeto Rythmicity -->
+    </a>
+    <div class="group">
+      <ul class="navigation"> <!-- Funcionalidades da barra de navegação -->
+        <li><a href="#" id="log">Login</a></li>
+        <li><a href="#" id="sign">Cadastrar-se</a></li>
+        <!-- <li><a href="loja.html">Loja</a></li> -->
+        <!-- <li><a href="Carrinho.html" id="carrinho">Seu Carrinho</a></li>-->
+        <!-- <li><a href="#">Sobre</a></li> -->
+        <li><a href="#" id="perfil"><ion-icon size="large" name="person-circle-outline"></ion-icon></a></li>
+      </ul>
+      <div class="search"> <!-- Barra de pesquisa da navbar -->
+        <span class="icon">
+          <ion-icon name="search-outline" class="searchBtn"></ion-icon>
+          <!-- Botão de pesquisa pego da biblioteca ionicons -->
+          <ion-icon name="close-outline" class="closeBtn"></ion-icon>
+          <!-- Botão de fechar pego da biblioteca ionicons -->
+        </span>
+      </div>
+      <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+    </div>
+    <div class="searchBox">
+      <input type="text" placeholder="Studies, Lessons, Instruments. . . ">
+      <!-- Barra de pesquisa e placeholder para pesquisa  -->
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="main-video-content">
+      <div id="video">
+        <label class="main-info"></label>
+      </div>
+      <video src="" controls muted autoplay></video>
+    </div>
+    <div id="whiteBar"></div>
+    <div class="playlist">
+      <div id="endBar"></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <strong>Empresa</strong>
+      <p>Sobre</p>
+      <p>Atendimento</p>
+      <p>Envio de currículo</p>
+      <p><a href="#" id="adicionar">Cadastro de video aulas</a></p>
+    </div>
+    <div class="footer-right">
+      <strong>Social</strong>
+      <p>Instagram</p>
+      <p>Discord</p>
+      <p>Facebook</p>
+      <p class="copyright">© 2023 Rhythmicity, PUC Minas.</p>
+    </div>
+  </footer>
+
+  <script>
+    const API_KEY = "AIzaSyC4HbuGNKl-ImE9MGxRPub9ttCFkqQSnlY";
+    const PLAYLIST_ID = "PLfimnwaZdumgdg-BPofqK8h6cdkxIxe2H";
+
+    function loadVideosFromYouTube() {
+      const playlist_area = document.querySelector(".playlist");
+
+      function fetchPlaylistPage(pageToken) {
+        let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&key=${API_KEY}&maxResults=50`;
+        if (pageToken) {
+          url += `&pageToken=${pageToken}`;
+        }
+
+        console.log("Fetching URL:", url); // Log URL for debugging
+
+        return fetch(url)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then(data => {
+            if (data.error) {
+              throw new Error(`API error! message: ${data.error.message}`);
+            }
+
+            console.log("API Response:", data); // Log API response for debugging
+
+            data.items.forEach((item, index) => {
+              const videoId = item.snippet.resourceId.videoId;
+              const title = item.snippet.title;
+              const thumbnail = item.snippet.thumbnails.high.url;
+
+              const div = document.createElement("div");
+              div.classList.add("playlist-video");
+              div.innerHTML = `
+                <label class="numb nIm${Math.floor(Math.random() * 3)}">${index + 1}</label>
+                <img src="${thumbnail}" alt="${title}">
+                <label class="playlist-video-info">${title}</label>
+              `;
+              div.classList.add("img" + Math.floor(Math.random() * 3));
+
+              div.addEventListener("click", () => {
+                setVideo(videoId, title);
+                updateActiveVideo(div);
+              });
+
+              playlist_area.appendChild(div);
+
+              if (index === 0 && !pageToken) {
+                setVideo(videoId, title);
+                updateActiveVideo(div);
+              }
+            });
+
+            let end = document.createElement("div");
+            end.id = "endBar";
+            playlist_area.appendChild(end);
+
+            if (data.nextPageToken) {
+              fetchPlaylistPage(data.nextPageToken);
+            }
+          })
+          .catch(error => {
+            console.error("Erro ao carregar vídeos:", error);
+          });
+      }
+
+      fetchPlaylistPage(null);
+    }
+
+    function setVideo(videoId, title) {
+      const video_main = document.querySelector(".main-video-content");
+      video_main.innerHTML = `
+        <label>${title}</label>
+        <div id="video">
+          <iframe id="main-video" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+        </div>
+      `;
+    }
+
+    function updateActiveVideo(selectedVideo) {
+      const playlist_videos = document.querySelectorAll(".playlist-video");
+      playlist_videos.forEach(video => {
+        video.classList.remove("active");
+      });
+      selectedVideo.classList.add("active");
+    }
+
+    loadVideosFromYouTube();
+
+    document.querySelector('#adicionar').addEventListener('click', function() {
+      window.location.href = 'indexcadastrovideoaulas_intermediario.html';
+    });
+
+    // Funções para barra de pesquisa e menu
+    let searchBtn = document.querySelector('.searchBtn');
+    let closeBtn = document.querySelector('.closeBtn');
+    let searchBox = document.querySelector('.searchBox');
+    let navigation = document.querySelector('.navigation');
+    let menuToggle = document.querySelector('.menuToggle');
+    let header = document.querySelector('header');
+
+    searchBtn.onclick = function () {
+      searchBox.classList.add('active');
+      closeBtn.classList.add('active');
+      searchBtn.classList.add('hidden');
+    }
+
+    closeBtn.onclick = function () {
+      searchBox.classList.remove('active');
+      closeBtn.classList.remove('active');
+      searchBtn.classList.remove('hidden');
+    }
+
+    menuToggle.onclick = function () {
+      header.classList.toggle('open');
+    }
+  </script>
+
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

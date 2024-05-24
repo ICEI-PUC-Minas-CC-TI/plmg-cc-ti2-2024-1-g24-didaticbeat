@@ -1,0 +1,249 @@
+
+<html>
+
+<head>
+	<meta content="text/html; charset = UTF-8" http-equiv="content-type">
+
+	<title>Controle de Estoque</title>
+</head>
+
+<script type="text/javascript">
+
+	function confirmarDeleteJogo(id, descricao, preco) {
+
+		if (confirm('Confirmar a exclusão do jogo [' + descricao + '] (ID ' + id + ') com preço R$ ' + preco)) {
+			location.href = '/jogo/delete/' + id;
+		}
+	}
+	function onLoad() {
+		if (document.getElementById("msg").value != "") {
+			alert(document.getElementById("msg").value);
+		}
+	}
+</script>
+
+
+<body>
+	<div class="main" onload="onLoad()">
+		<h1>Perfil</h1>
+		<input type="hidden" id="msg" name="msg" value="">
+		<UM-PRODUTO>
+			<LISTAR-PRODUTO>
+				<style>
+					* {
+						box-sizing: border-box;
+					}
+
+					body {
+						background-color: rgb(42, 51, 56);
+					}
+
+					h1 {
+						text-align: center;
+						color: rgb(253, 41, 76);
+						font-weight: bold;
+						font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+					}
+
+					form {
+						margin: 0;
+					}
+
+					.main {
+						background-color: rgb(11, 97, 90);
+						padding: 5px 40px;
+						height: 100%;
+						border-radius: 5px;
+						margin: 5px 50px;
+					}
+
+					.tab1 {
+						border-top: rgb(253, 41, 76) 10px;
+						border-top-style: solid;
+						border-top-left-radius: 5px;
+						border-top-right-radius: 5px;
+						background-color: white;
+						padding: 0px 10px;
+					}
+
+					.tab2 {
+						background-color: white;
+						border-top: rgb(11, 97, 90) dashed;
+						padding: 0px 10px;
+						padding-bottom: 10px;
+						border-bottom-left-radius: 5px;
+						border-bottom-right-radius: 5px;
+					}
+
+
+					.input--main__style {
+						background-color: #38df6a;
+					}
+
+					.input--button {
+						font-weight: bold;
+						font-family: Arial;
+						font-size: medium;
+						border-color: transparent;
+						display: block;
+						margin: 0px auto;
+						margin-bottom: 10px;
+						color: white;
+					}
+
+					.input--register {
+						display: inline;
+					}
+
+					table {
+						border: none;
+					}
+
+					.out {
+						background-color: rgb(104, 149, 155);
+						width: 100%;
+						margin: 0;
+						border: 0;
+						padding: 0px 5px;
+
+					}
+
+					.out td {
+						color: rgb(248, 59, 91);
+						text-shadow: -1px -1px 0 rgb(11, 97, 90), 1px -1px 0 rgb(11, 97, 90), -1px 1px 0 rgb(11, 97, 90), 1px 1px 0 rgb(11, 97, 90);
+						font-weight: bold;
+						font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+						margin: 0;
+						border: 0;
+						padding: 5px;
+					}
+
+					td {
+						color: rgb(247, 165, 57);
+					}
+
+					b {
+						text-align: center;
+						color: rgb(253, 41, 76);
+						font-weight: bold;
+						font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+					}
+
+					tbody b {
+						color: rgb(247, 165, 57);
+					}
+
+					tbody font b {
+						color: rgb(253, 41, 76);
+					}
+
+					input {
+						display: block;
+						border-radius: 7px;
+						padding: 10px;
+						border-style: solid;
+						border-color: rgb(253, 41, 76);
+						color: black;
+						padding: 10px;
+						margin-bottom: 10px;
+					}
+
+					form p {
+						text-align: initial;
+						display: inline;
+						margin-left: 15px;
+					}
+
+					a {
+						text-decoration: none;
+					}
+
+					.p--nomargin {
+						margin-left: 0px;
+						margin-right: 10px;
+					}
+				</style>
+	</div>
+</body>
+
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil da Usuário</title>
+    <script type="text/javascript">
+
+    function confirmarDeleteJogo(id, descricao, preco) {
+
+        if (confirm('Confirmar a exclusão do jogo [' + descricao + '] (ID ' + id + ') com preço R$ ' + preco)) {
+            location.href = '/jogo/delete/' + id;
+        }
+    }
+    function onLoad() {
+        if (document.getElementById("msg").value != "") {
+            alert(document.getElementById("msg").value);
+        }
+    }
+</script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .profile-info {
+            margin-bottom: 20px;
+        }
+        .profile-info label {
+            font-weight: bold;
+        }
+        .profile-info p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body onload = "onLoad()">
+    <div class="container">
+        <h1>Perfil de Usuário</h1>
+        <div class="profile-info">
+            <label for="id">ID:</label>
+            <p id="id">%ID%</p>
+        </div>
+        <div class="profile-info">
+            <label for="nome">Nome Completo:</label>
+            <p id="nome">%NOME%</p>
+        </div>
+        <div class="profile-info">
+            <label for="email">Email:</label>
+            <p id="email">%EMAIL%</p>
+        </div>
+        <div class="profile-info">
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <p id="data-nascimento">%DATA_NASCIMENTO%</p>
+        </div>
+        <div class="profile-info">
+            <label for="instrumento">Instrumento:</label>
+            <p id="instrumento">%INSTRUMENTO%</p>
+        </div>
+        <div class="profile-info">
+            <label for="descricao">Descrição:</label>
+            <p id="descricao">%DESCRICAO%</p>
+        </div>
+    </div>
+</body>
+</html>
+  -->

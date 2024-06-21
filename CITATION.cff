@@ -2,26 +2,22 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: 
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Fereguetti
+    given-names: Iago
+  - family-names: Alves
+    given-names: Arthur
+  - family-names: Vilhena
+    given-names: Felipe
+  - family-names: Cunha
+    given-names: Gabriel
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Amy
+    given-names: Illo
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Mara
+    given-names: Luciana
 keywords:
   - 
   - 

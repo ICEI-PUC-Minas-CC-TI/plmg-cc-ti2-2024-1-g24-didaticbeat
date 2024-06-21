@@ -6,6 +6,10 @@ const log = document.querySelector('#log');
 const sign = document.querySelector('#sign');
 const perfil = document.querySelector('#perfil')
 const nav = document.querySelector('.navigation')
+const AI = document.querySelector('#AI')
+AI.addEventListener('click', function () {
+  window.location.href = 'ai.html';
+});
 
 if (localStorage.getItem("userLogado")) {
   nav.removeChild(log.parentElement);

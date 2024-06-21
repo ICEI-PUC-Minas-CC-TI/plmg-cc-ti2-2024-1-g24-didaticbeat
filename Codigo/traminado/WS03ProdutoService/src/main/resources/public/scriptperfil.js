@@ -3,27 +3,31 @@ const log = document.querySelector('#log');
 const sign = document.querySelector('#sign');
 const videoaulas = document.querySelector('#vid');
 const perfil = document.querySelector('#perfil');
+const AI = document.querySelector('#AI')
+AI.addEventListener('click', function () {
+  window.location.href = 'ai.html';
+});
 
-log.addEventListener('click', function() {
+log.addEventListener('click', function () {
   window.location.href = 'forms.html';
 });
 
-sign.addEventListener('click', function() {
-    window.location.href = 'forms.html';
+sign.addEventListener('click', function () {
+  window.location.href = 'forms.html';
 });
 
-videoaulas.addEventListener('click', function() {
+videoaulas.addEventListener('click', function () {
   window.location.href = 'indexvideoaulas.html';
 });
 
-perfil.addEventListener('click', function() {
+perfil.addEventListener('click', function () {
   window.location.href = 'indexperfil.html';
 });
 
 //Redirecionamento ao clicar no logotipo
 const logotype = document.querySelector('#logotype');
 
-logotype.addEventListener('click', function() {
+logotype.addEventListener('click', function () {
   window.location.href = 'index.html';
 });
 
@@ -76,7 +80,7 @@ btn_salvar.addEventListener("click", () => {
 const about = document.querySelector("#about");
 about.innerHTML = userLogado.sobre;
 
-  
+
 
 
 //Mensagem estilizada no console

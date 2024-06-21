@@ -1,0 +1,123 @@
+body {
+    height: fit-content;
+}
+
+.bd {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.backDots {
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    background-image: url("images/dots.svg");
+    background-size: 50%;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    background-size: 100%;
+    z-index: 1;
+    border-bottom: 7px double black;
+}
+
+footer {
+    border: none;
+}
+
+.imgInput {
+    display: inline-flex;
+    height: 800px;
+    width: 70%;
+    background-image: url("images/imgBackg.svg");
+    background-size: 200% 100%;
+    background-position: 0 50%;
+    background-repeat: repeat-x;
+    background-size: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 10% 20%;
+}
+
+.imgInput input {
+    display: none;
+}
+
+.imgInput .image {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: #1be7dd solid 5px;
+    border-right: #1be7dd solid 5px;
+    border-top: #0dc0d8 solid 5px;
+    border-left: #0dc0d8 solid 5px;
+    border-radius: 5px;
+}
+
+.image label {
+    background-image: url("images/pngegg.png");
+    background-size: 100%;
+    background-position: 50%;
+    background-color: rgb(213, 237, 243);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+}
+
+.bd form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.bd button {
+    display: inline;
+    border-right: 50%;
+    position: absolute;
+    bottom: 30%;
+    right: 45%;
+    z-index: 5;
+    border: none;
+    width: 300px;
+    height: 50px;
+    background-color: #ffffff00;
+    background-image: url("images/Confirm.svg");
+    background-size: 100%;
+    color: white;
+    font-size: x-large;
+    text-align: end;
+    padding-right: 80px;
+    /*
+    filter: invert(100%);
+    color: black;
+    /*filter: invert(100%);*/
+}
+
+.bd button:hover {
+    filter: invert(90%);
+}
+
+.gg {
+    width: 40%;
+    height: 60%;
+}
+
+#goat {
+    color: black;
+    font-size: xx-large;
+    border-top: solid black 5px;
+    border-bottom: solid black 5px;
+    width: 100%;
+    text-align: center;
+    max-height: 100%;
+    font-stretch: condensed;
+}

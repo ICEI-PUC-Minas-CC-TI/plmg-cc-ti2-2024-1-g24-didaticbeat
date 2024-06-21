@@ -15,7 +15,10 @@ else {
 }
 
 
-
+const AI = document.querySelector('#AI')
+AI.addEventListener('click', function () {
+  window.location.href = 'ai.html';
+});
 log.addEventListener('click', function () {
   window.location.href = 'forms.html';
 });

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Didatic Beat - Página Inicial</title>
+    <link rel="icon" href="images/DBlogo.jpg">
+    <link rel="stylesheet" href="stylehome.css">
+    <link rel="stylesheet" href="styleAi.css">
+</head>
+
+<body>
+    <!--Navbar / FELIPE VILHENA DIAS-->
+    <header class="header-navbar">
+
+        <a href="index.html" class="logo" id="logotype">
+            <img src="images\DBNoteLogo.jpg" alt="Logo1"> <!-- Logo do Projeto Rythmicity -->
+        </a>
+        <div class="group">
+            <ul class="navigation"> <!-- Funcionalidades da barra de navegação -->
+                <li><a href="#" id="log">Login</a></li>
+                <li><a href="#" id="sign">Cadastrar-se</a></li>
+                <li><a href="#" id="vid">Meus Estudos</a></li>
+                <li><a href="#" id="AI">Ai</a></li>
+                <!-- <li><a href="loja.html">Loja</a></li> -->
+                <!-- <li><a href="Carrinho.html" id="carrinho">Seu Carrinho</a></li>-->
+                <!-- <li><a href="#">Sobre</a></li> -->
+                <li><a href="#" id="perfil"><ion-icon size="large" name="person-circle-outline"></ion-icon></a></li>
+            </ul>
+            <div class="search"> <!-- Barra de pesquisa da navbar -->
+                <span class="icon">
+                    <ion-icon name="search-outline" class="searchBtn"></ion-icon>
+                    <!-- Botão de pesquisa pego da biblioteca ionicons -->
+                    <ion-icon name="close-outline" class="closeBtn"></ion-icon>
+                    <!-- Botão de fechar pego da biblioteca ionicons -->
+                </span>
+            </div>
+            <ion-icon name="menu-outline" class="menuToggle"></ion-icon>
+        </div>
+        <div class="searchBox">
+            <input type="text" placeholder="Studies, Lessons, Instruments. . . ">
+            <!-- Barra de pesquisa e placeholder para pesquisa  -->
+        </div>
+    </header>
+
+    <div class="bd">
+        <form class="fm" id="aiForm">
+            <div class="backDots"></div>
+            <div class="imgInput">
+                <div class="image">
+                    <input type="file" id="aiFile">
+                    <label for="aiFile" id="imgPrev">
+                </div>
+                <button type="submit" class="flash"> Upload</button>
+            </div>
+            <div class="gg">
+                <h1 id="goat"></h1>
+            </div>
+        </form>
+    </div>
+
+
+    <footer>
+        <div class="footer-left">
+            <strong>Empresa</strong>
+            <p>Sobre</p>
+            <p>Atendimento</p>
+            <p>Envio de currículo</p>
+            <p><a href="#" id="adicionar">Cadastro de video aulas</a></p>
+        </div>
+        <div class="footer-right">
+            <strong>Social</strong>
+            <p>Instagram</p>
+            <p>Discord</p>
+            <p>Facebook</p>
+            <p class="copyright">© 2023 Rhythmicity, PUC Minas.</p>
+        </div>
+    </footer>
+
+    <!--Script navbar / FELIPE VILHENA DIAS-->
+    <script>
+
+        const aiForm = document.getElementById("aiForm");
+        const aiFile = document.getElementById("aiFile");
+        const bt = document.getElementsByClassName("flash");
+        const img = document.getElementById("imgPrev");
+        const outPut = document.getElementById("goat");
+
+        aiFile.addEventListener("change", function () {
+            const files = aiFile.files[0];
+
+            if (files) {
+                const fileReader = new FileReader();
+                fileReader.readAsDataURL(files);
+                fileReader.addEventListener("load", function () {
+                    img.style.backgroundImage = 'url("' + this.result + '")'
+                })
+            }
+        })
+
+        async function fetchdata(endpoint, options) {
+            try {
+                const resp = await fetch(endpoint, options);
+                return await resp.json();
+            } catch (error) {
+                console.error('Error:', error)
+            }
+        }
+
+        aiForm.addEventListener("submit", async e => {
+            e.preventDefault();
+
+            const endpoint = "https://didbeat-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/dca91553-b531-494c-b1de-59a59fa60a5e/classify/iterations/Iteration1/image"
+            const formData = new FormData();
+            const headerData = new Headers();
+
+            formData.append("data", aiFile.files[0]);
+            headerData.append("Prediction-Key", "8151fd3f278f4e1dbe5ab815ca937d55");
+            headerData.append("Content-Type", "application/octet-stream");
+
+            const options = {
+                method: "post",
+                headers: headerData,
+                body: aiFile.files[0]
+            }
+
+            let response = await fetchdata(endpoint, options);
+            console.log(response);
+            console.log(response.predictions[0]);
+            outPut.innerText = "\nTipo de acorde mais Provavel:\n" + response.predictions[0].tagName + "\nProbabilidade:\n" + (response.predictions[0].probability * 100) + "%\n \n";
+
+        });
+
+        // variaveis
+        let searchBtn = document.querySelector('.searchBtn');
+        let closeBtn = document.querySelector('.closeBtn');
+        let searchBox = document.querySelector('.searchBox');
+        let navigation = document.querySelector('.navigation');
+        let menuToggle = document.querySelector('.menuToggle');
+        let header = document.querySelector('header');
+
+        // função para barra de pesquisa aparecer e sumir da navbar
+        searchBtn.onclick = function () {
+            searchBox.classList.add('active');
+            closeBtn.classList.add('active');
+            searchBtn.classList.add('hidden'); // Adiciona a classe 'hidden' para ocultar o botão de pesquisa
+        }
+
+        closeBtn.onclick = function () {
+            searchBox.classList.remove('active');
+            closeBtn.classList.remove('active');
+            searchBtn.classList.remove('hidden'); // Remove a classe 'hidden' para exibir o botão de pesquisa novamente
+        }
+
+        // responsividade da navbar
+        menuToggle.onclick = function () {
+            header.classList.toggle('open');
+
+        }
+    </script>
+
+    <script type="module" src="scriptvideo.js"></script>
+    <script src="scripthome.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

@@ -4,6 +4,10 @@
 const passwordFields = document.querySelectorAll('.password');
 const eyeIcons = document.querySelectorAll('.olho-senha');
 const forms = document.querySelector('.forms');
+const AI = document.querySelector('#AI')
+AI.addEventListener('click', function () {
+  window.location.href = 'ai.html';
+});
 
 const nav = document.querySelector('.navigation')
 const videoaulas = document.querySelector('#vid')
